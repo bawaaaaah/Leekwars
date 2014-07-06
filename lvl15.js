@@ -165,6 +165,20 @@ function canEnemyHitMe(enemy, marge)
 }
 
 /*
+** Function considers enemie's AI is a dummy one
+*/
+
+function dummyEnemyAI(enemy)
+{
+	var enemyWeapon = getWeapon(enemy);
+	var enemyWeaponScope = getWeaponMinScope(enemyWeapon);
+	
+	if (enemyWeaponScope > 1)
+		return (true);
+	else
+		return (false);
+}
+/*
 ** Function who attack at semi-distance++ (7 of range)
 **
 ** Parameters :
@@ -256,7 +270,7 @@ function near (enemy, chip, chipTarget)
 	useSpark(enemy);
 	useSpark(enemy);
 	useBandage(getLeek());
-	if (getTurn() > 50 || canEnemyHitMe(enemy,0) == true)
+	if (getTurn() > 42 || canEnemyHitMe(enemy,0) == true || dummyEnemyAI(enemy) == true)
 		moveToward(enemy);
 	else
 		moveAwayFrom(enemy);
