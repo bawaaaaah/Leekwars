@@ -205,9 +205,9 @@ function far (enemy, chip, leek)
 
 function farFarAway(enemy)
 {
-	useSpark(enemy);
-	useSpark(enemy);
 	useBandage(getLeek());
+	useSpark(enemy);
+	useSpark(enemy);
 	moveAwayFrom(enemy);
 	return (true);
 }
