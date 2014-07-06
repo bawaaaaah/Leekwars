@@ -1,4 +1,0 @@
-Leekwars
-========
-
-Leekwars Algorithmes
