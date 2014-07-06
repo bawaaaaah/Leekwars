@@ -244,13 +244,7 @@ function farFarAway(enemy)
 function near (enemy, chip, chipTarget)
 {
 	if (getCellDistance(getCell(enemy), getCell()) <= 1)
-		{
-			moveTowardCell(getCell(enemy), 1);
-			if (getCellDistance(getCell(enemy), getCell()) <= 1)
-				getCacWeapon();
-			else
-				getFarWeapon();
-		}
+		getCacWeapon();
 	if (getWeapon() == farWeapon)
 	{
 		useWeapon(enemy);
