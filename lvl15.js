@@ -117,9 +117,9 @@ if (getWeapon() == -1)
 
 if (getCellDistance(getCell(enemy), getCell()) < 15)
 {
-	useHelmet(getLeek());
 	if (getTurn() < 7 || (getLife() < 120 && getCellDistance(getCell(enemy), getCell()) > 5))
 		useStretching(getLeek());
+	useHelmet(getLeek());
 }
 
 /*
