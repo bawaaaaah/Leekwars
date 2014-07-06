@@ -158,8 +158,10 @@ function canEnemyHitMe(enemy, marge)
 	var enemyWeapon = getWeapon(enemy);
 	var enemyWeaponScope = getWeaponMaxScope(enemyWeapon);
 	var enemyHitScope = enemyWeaponScope + getMP(enemy) - getMP() - marge;
+	var sparkScope = 10 + getMP(enemy) - getMP() - marge;
 	
-	if (getCellDistance(getCell(enemy), getCell()) <= enemyHitScope)
+	if (getCellDistance(getCell(enemy), getCell()) <= enemyHitScope ||
+	getCellDistance(getCell(enemy), getCell()) <= sparkScope)
 		return true;
 	return false;
 }
