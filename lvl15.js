@@ -229,12 +229,10 @@ function near (enemy, chip, chipTarget)
 {
 	if (getCellDistance(getCell(enemy), getCell()) <= 1)
 		getCacWeapon();
-	else
-		getFarWeapon();
 	if (getWeapon() == farWeapon)
 	{
-		if (useWeapon(enemy) != USE_SUCCESS ||
-		useWeapon(enemy) != USE_SUCCESS)
+		useWeapon(enemy);
+		if (getLife() < 150)
 		{
 			useBandage(getLeek());
 			usePebble(enemy);
@@ -246,6 +244,8 @@ function near (enemy, chip, chipTarget)
 **				useSpark(enemy);
 **			}
 */		}
+		else
+			useWeapon(enemy);
 	}
 	else
 	{
@@ -276,11 +276,8 @@ function getAction(enemy)
 	var chip = null;
 	var target = enemy;
 	
-	if (bandageCooldown == 0 && 
-		((getLife() < 120 && getLife() > 50) ||	
-			getLife(enemy) > 60 ||
-			canEnemyHitMe(enemy, 0) == false)
-		)
+	if ((getLife() < 200 && canEnemyHitMe(enemy, 0) == false) ||
+		(getLife() < 120))
 	{
 		chip = healChip;
 		bandageCooldown = 1;
@@ -324,7 +321,10 @@ else
 			{
 				moveAwayFrom(enemy);
 			}
+			useBandage(getLeek());
 			return (true);
 		}
 		moveTowardCell(getCell(enemy), 1);
 	}
+	debug(getTP());
+useBandage(getLeek());
