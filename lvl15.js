@@ -313,7 +313,7 @@ function getAction(enemy)
 ** in this case, go rush the ennemy.
 */
 
-if (getTurn() > 50)
+if (getTurn() > 42)
 	near(enemy, CHIP_PEBBLE, enemy);
 else
 	while (getMP() > 0)
