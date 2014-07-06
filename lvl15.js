@@ -253,6 +253,9 @@ function near (enemy, chip, chipTarget)
 		useWeapon(enemy);
 		usePebble(enemy);
 	}
+	useSpark(enemy);
+	useSpark(enemy);
+	useBandage(getLeek());
 	if (getTurn() > 50 || canEnemyHitMe(enemy,0) == true)
 		moveToward(enemy);
 	else
