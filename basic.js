@@ -13,5 +13,5 @@ var enemy = getNearestEnemy();
 moveToward(enemy);
 
 // On essaye de lui tirer dessus
-useWeapon(enemy);
-useWeapon(enemy);
+while(getWeaponCost(getWeapon()) < getTP())
+	useWeapon(enemy);
